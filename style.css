@@ -143,7 +143,7 @@ body {
     overflow: hidden;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 5rem;
     box-shadow: 10px 10px 1px 1px var(--shadow);
 }
 
@@ -161,7 +161,7 @@ body {
 }
 
 .article-title {
-    margin-right: 2rem;
+    margin-right: 5rem;
 }
 
 .link {
