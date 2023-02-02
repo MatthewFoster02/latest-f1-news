@@ -1,3 +1,43 @@
+// Filter links
+const filterAll = document.getElementById('all');
+const filterF1 = document.getElementById('f1');
+const filterSkyf1 = document.getElementById('skyf1');
+const filterBbcf1 = document.getElementById('bbcf1');
+const filterWtf1 = document.getElementById('wtf1');
+const filterAutosport = document.getElementById('autosport');
+
+const publicationSource = document.getElementById('source');
+
+filterAll.addEventListener('click', () => 
+{
+    source.innerHTML = "All";
+});
+
+filterF1.addEventListener('click', () => 
+{
+    source.innerHTML = "F1";
+});
+
+filterSkyf1.addEventListener('click', () => 
+{
+    source.innerHTML = "Sky F1";
+});
+
+filterBbcf1.addEventListener('click', () => 
+{
+    source.innerHTML = "BBC F1";
+});
+
+filterWtf1.addEventListener('click', () => 
+{
+    source.innerHTML = "WTF1";
+});
+
+filterAutosport.addEventListener('click', () => 
+{
+    source.innerHTML = "Autosport";
+});
+
 //toggle for dark mode
 const body = document.body;
 const toggleSwitch = document.getElementById("toggle");
@@ -86,4 +126,4 @@ function displayData(data)
     });
 }
 
-setInterval(refresh_content, 1000*60);
+setInterval(refresh_content, 1000*60*10);

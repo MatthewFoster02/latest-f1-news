@@ -85,6 +85,9 @@ h3{
     --scrollbar: var(--clr-background-dark);
     --shadow: var(--clr-background-dark);
     --shadow-hover: var(--clr-card-background-dark);
+    --filter-button-bg: var(--clr-background-dark);
+    --filter-button-hover-bg: var(--clr-card-background-dark);
+    --filter-button-font: white;
 }
 
 .themeDark {
@@ -95,6 +98,9 @@ h3{
     --scrollbar: var(--clr-background-light);
     --shadow: var(--clr-background-light);
     --shadow-hover: var(--clr-card-background-light);
+    --filter-button-bg: var(--clr-background-light);
+    --filter-button-hover-bg: var(--clr-card-background-light);
+    --filter-button-font: black;
 }
 
 body {
@@ -168,6 +174,27 @@ body {
     color: var(--font-hover);
 }
 
+.source-choice {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.source {
+    font-size: 1.125rem;
+}
+
+#source {
+    font-weight: var(--fw-bold);
+}
+
 
 /* Customising the scrollbar for chrome*/
 ::-webkit-scrollbar{
@@ -189,6 +216,61 @@ body {
     color: var(--bg);
     background-color: var(--font);
 }
+
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: var(--filter-button-bg);
+    color: var(--filter-button-font);
+    font-weight: var(--fw-bold);
+    padding: 0.5rem 0.5rem;
+    font-size: 0.875rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    font-weight: var(--fw-bold);
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: var(--filter-button-hover-bg);
+}
+
 
 @media (max-width: 800px) {
     body {
@@ -214,6 +296,23 @@ body {
 
     .latest-news {
         margin-top: 2rem;
+        gap: 1rem;
+    }
+
+    .source-choice {
+        margin-top: 0.5rem;
+    }
+
+    .filter-option {
+        gap: 0.5rem;
+    }
+
+    .dropbtn {
+        font-size: 0.75rem;
+    }
+
+    .source {
+        font-size: 0.75rem;
     }
 
     .card {
