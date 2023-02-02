@@ -11,31 +11,37 @@ const publicationSource = document.getElementById('source');
 filterAll.addEventListener('click', () => 
 {
     source.innerHTML = "All";
+    getContent(); // Load articles from all sources
 });
 
 filterF1.addEventListener('click', () => 
 {
     source.innerHTML = "F1";
+    getFilteredContent('f1');
 });
 
 filterSkyf1.addEventListener('click', () => 
 {
     source.innerHTML = "Sky F1";
+    getFilteredContent('skyf1');
 });
 
 filterBbcf1.addEventListener('click', () => 
 {
     source.innerHTML = "BBC F1";
+    getFilteredContent('BBCF1');
 });
 
 filterWtf1.addEventListener('click', () => 
 {
     source.innerHTML = "WTF1";
+    getFilteredContent('WTF1');
 });
 
 filterAutosport.addEventListener('click', () => 
 {
     source.innerHTML = "Autosport";
+    getFilteredContent('autosport');
 });
 
 //toggle for dark mode
@@ -75,6 +81,15 @@ function getContent()
     .catch(err => console.error(err));
 }
 getContent();
+
+function getFilteredContent(source)
+{
+    fetch(`https://guarded-badlands-73293.herokuapp.com/news/${source}`).then(res => res.json()).then(data => 
+    {
+        displayData(data);
+    })
+    .catch(err => console.error(err));
+}
 
 function displayData(data)
 {
