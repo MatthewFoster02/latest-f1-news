@@ -138,6 +138,7 @@ body {
 }
 
 .card {
+    text-decoration: none;
     background-color: var(--card-bg);
     border-radius: 0.5rem;
     overflow: hidden;
@@ -152,23 +153,19 @@ body {
     box-shadow: 10px 10px 1px 1px var(--shadow-hover);
 }
 
-.card:hover .link {
-    color: var(--font-hover);
-}
-
 .source-logo {
     height: 160px;
 }
 
 .article-title {
     margin-right: 5rem;
-}
-
-.link {
-    text-decoration: none;
     color: var(--font);
     font-weight: var(--fw-bold);
     font-size: 1.25rem;
+}
+
+.card:hover .article-title {
+    color: var(--font-hover);
 }
 
 
@@ -191,6 +188,51 @@ body {
 ::selection {
     color: var(--bg);
     background-color: var(--font);
+}
+
+@media (max-width: 800px) {
+    body {
+        margin-block: 2rem;
+        margin-inline: 1rem;
+    }
+
+    .header {
+        padding-bottom: 0.5rem;
+    }
+
+    .title {
+        font-size: 0.9125rem;
+    }
+
+    .toggle-section {
+        gap: 0.5rem;
+    }
+
+    .toggle-text {
+        font-size: 0.65rem;
+    }
+
+    .latest-news {
+        margin-top: 2rem;
+    }
+
+    .card {
+        gap: 0.5rem;
+        box-shadow: 2px 2px 1px 1px var(--shadow);
+    }
+    .card:hover {
+        box-shadow: 2px 2px 1px 1px var(--shadow-hover);
+    }
+
+    .source-logo {
+        height: 80px;
+    }
+
+    .article-title {
+        margin-right: 0.5rem;
+        font-size: 0.65rem;
+        line-height: 1;
+    }
 }
 
 
