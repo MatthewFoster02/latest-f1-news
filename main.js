@@ -19,8 +19,7 @@ toggleSwitch.addEventListener('change', (e) =>
 
 
 //First a function which is to be called every minute
-//let refresh_content = 
-function refreshContent()
+let refresh_content = function refreshContent()
 {
     let rawData = [];
     //First call to API
@@ -31,12 +30,12 @@ function refreshContent()
     })
     .catch(err => console.error(err));
 }
-refreshContent();
 
 function displayData(data)
 {
     // Get parent div for cards
     let parent = document.getElementById("parent");
+    parent.innerHTML = '';
     // Loop through each article and create card object
     data.forEach(article =>
     {
@@ -82,4 +81,4 @@ function displayData(data)
     });
 }
 
-//setInterval(refresh_content, 1000*60);
+setInterval(refresh_content, 1000*60);
