@@ -21,7 +21,11 @@ toggleSwitch.addEventListener('change', (e) =>
 //First a function which is to be called every minute
 let refresh_content = function refreshContent()
 {
-    let rawData = [];
+    getContent();
+}
+
+function getContent()
+{
     //First call to API
     fetch('https://guarded-badlands-73293.herokuapp.com/news').then(res => res.json()).then(data => 
     {
@@ -30,6 +34,7 @@ let refresh_content = function refreshContent()
     })
     .catch(err => console.error(err));
 }
+getContent();
 
 function displayData(data)
 {
