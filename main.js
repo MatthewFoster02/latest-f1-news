@@ -76,7 +76,7 @@ function getContent()
     fetch('https://guarded-badlands-73293.herokuapp.com/news').then(res => res.json()).then(data => 
     {
         //Display on page
-        displayData(data);
+        displayData(keepFirst10(data));
     })
     .catch(err => console.error(err));
 }
@@ -89,6 +89,44 @@ function getFilteredContent(source)
         displayData(data);
     })
     .catch(err => console.error(err));
+}
+
+function keepFirst10(data)
+{
+    let prunedData = [];
+    let f1count = 0;
+    let skyf1count = 0;
+    let bbcf1count = 0;
+    let wtf1count = 0;
+    let autosportcount = 0;
+    data.forEach(article =>
+    {
+        switch(article.source)
+        {
+            case 'f1':
+                if(f1count >= 10) return;
+                f1count++;
+                break;
+            case 'skyf1':
+                if(skyf1count >= 10) return;
+                skyf1count++;
+                break;
+            case 'BBCF1':
+                if(bbcf1count >= 10) return;
+                bbcf1count++;
+                break;
+            case 'WTF1':
+                if(wtf1count >= 10) return;
+                wtf1count++;
+                break;
+            case 'autosport':
+                if(autosportcount >= 10) return;
+                autosportcount++;
+                break;
+        }
+        prunedData.push(article);
+    });
+    return prunedData;
 }
 
 function displayData(data)
