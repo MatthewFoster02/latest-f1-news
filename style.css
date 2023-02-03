@@ -167,7 +167,8 @@ body {
     margin-right: 5rem;
     color: var(--font);
     font-weight: var(--fw-bold);
-    font-size: 1.25rem;
+    font-size: 2rem;
+    line-height: 1;
 }
 
 .card:hover .article-title {
