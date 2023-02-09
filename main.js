@@ -1,3 +1,5 @@
+const baseURL = 'https://f1newsapi.onrender.com'
+
 // Filter links
 const filterAll = document.getElementById('all');
 const filterF1 = document.getElementById('f1');
@@ -73,7 +75,7 @@ let refresh_content = function refreshContent()
 function getContent()
 {
     //First call to API
-    fetch('https://guarded-badlands-73293.herokuapp.com/news').then(res => res.json()).then(data => 
+    fetch(baseURL + '/news').then(res => res.json()).then(data => 
     {
         //Display on page
         displayData(keepFirst10(data));
@@ -84,7 +86,7 @@ getContent();
 
 function getFilteredContent(source)
 {
-    fetch(`https://guarded-badlands-73293.herokuapp.com/news/${source}`).then(res => res.json()).then(data => 
+    fetch(baseURL + `/news/${source}`).then(res => res.json()).then(data => 
     {
         displayData(data);
     })
